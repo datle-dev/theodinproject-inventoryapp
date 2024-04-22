@@ -1,0 +1,27 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  min-height: 100dvh;
+}
+
+.container-main {
+  display: flex;
+  gap: 2rem;
+}
+
+.sidebar {
+}
+
+.text-success {
+  color: green;
+}
+
+.text-danger {
+  color: red;
+}
+
+.text-warning {
+  color: orange;
+}
