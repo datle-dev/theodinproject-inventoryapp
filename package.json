@@ -1,11 +1,11 @@
 {
-  "name": "theodinproject-locallibrary",
+  "name": "theodinproject-inventoryapp",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon ./bin/www",
-    "server": "DEBUG=theodinproject-locallibrary:* npm run dev"
+    "server": "DEBUG=theodinproject-inventoryapp:* npm run dev"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
