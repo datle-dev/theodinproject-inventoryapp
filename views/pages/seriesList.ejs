@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../partials/headContent') %>
+  <title><%= title %></title>
+</head>
+<body>
+  <%- include('../partials/header') %>
+  <main>
+    <h1><%= title %></h1>
+    <ul>
+      <% for (let series of series_list) { %>
+        <li>
+          <a href=<%= series.url %>><%= series.name %></a>
+        </li>
+      <% } %>
+    </ul>
+  </main>
+  <%- include('../partials/footer') %>
+</body>
+</html>
