@@ -38,18 +38,17 @@ async function itemCreate(
   description,
   price,
   quantity,
-  series,
   category,
+  series,
 ) {
   const item = new Item({
     name: name,
     description: description,
     price: price,
     quantity: quantity,
+    category: category,
     series: series,
   });
-
-  if (category != false) item.category = category;
 
   await item.save();
   items[index] = item;
@@ -152,8 +151,8 @@ async function createItems() {
       'Haikyu!! Volume 1 features story and art by Haruichi Furudate\\nEver since he saw the legendary player known as the \"Little Giant\" compete at the national volleyball finals, Shoyo Hinata has been aiming to be the best volleyball player ever! He decides to join the team at the high school the Little Giant went to-and then surpass him. Who says you need to be tall to play volleyball when you can jump higher than anyone else?\\nAfter losing his first and last volleyball match against Tobio Kageyama, the King of the Court, Shoyo Hinata swears to become his rival after graduating middle school. But what happens when the guy who is supposed to be his rival ends up being his teammate?!',
       999,
       3,
+      categories[2],
       series[5],
-      [categories[2]],
     ),
     itemCreate(
       1,
@@ -161,8 +160,8 @@ async function createItems() {
       'Haikyu!! Volume 2 features story and art by Haruichi Furudate\\nEver since he saw the legendary player known as the \"Little Giant\" compete at the national volleyball finals, Shoyo Hinata has been aiming to be the best volleyball player ever! He decides to join the team at the high school the Little Giant went to-and then surpass him. Who says you need to be tall to play volleyball when you can jump higher than anyone else?\\nAfter proving themselves to be the ultimate combination in their practice match against Tsukishima, Kageyama and Hinata are finally allowed to join the club! Hinata\’s true power—to perfectly time his spikes with his eyes closed—is awakened and nothing can seem to stop this crazy setter-spiker duo. Now their skills are about to put to the test at a practice match against one of Kageyama\’s former teammates from middle school, Toru Oikawa.',
       999,
       4,
+      categories[2],
       series[5],
-      [categories[2]],
     ),
     itemCreate(
       2,
@@ -170,8 +169,8 @@ async function createItems() {
       'Bocchi the Rock! Manga Volume 1 features story and art by Aki Hamazi.\\nBocchi finally takes the stage in English, and she\’s brought her best friend—crippling anxiety! Hitori Goto just wants to make friends, but the thought of approaching a stranger on her own makes her so nervous that she\’s spent the entirety of middle school teaching herself how to shred on the guitar—to moderately successful (albeit anonymous) YouTube fame—in the hopes of seeming cool enough for someone else to reach out to her instead.\\nAfter bringing her guitar to school provokes zero interest, Hitori\’s just about ready to shrivel up and die...which is when Nijika Ijichi comes across her moping in a playground and begs her to fill in for her band\’s flakey guitarist for their first-ever live performance! It\’s like her wish came true—but does this most antisocial of introverts have what it takes to perform in front of real people?!',
       1499,
       7,
+      categories[2],
       series[1],
-      [categories[2]],
     ),
     itemCreate(
       3,
@@ -179,8 +178,8 @@ async function createItems() {
       'Hitori Gotoh, aka Bocchi-chan, plays guitar in hopes of joining a band. And while she\’s famous online, what\’s holding her back is that she\’s incredibly introverted. That is, until a desperate drummer gets Bocchi-chan out of her shell and onto the stage.',
       6998,
       2,
+      categories[4],
       series[1],
-      [categories[4]],
     ),
     itemCreate(
       4,
@@ -188,8 +187,8 @@ async function createItems() {
       'KILL la KILL Complete Box Set contains episodes 1-24 and the unaired episode #25 of the anime directed by Hiroyuki Imaishi plus a Booklet.\\n\“Life Fiber Synchronize! Kamui Senketsu!!\”\\nThe anime created by the legendary duo of Kazuki Nakashima and Hiroyuki Imaishi (Gurren Lagann) is finally reborn as a complete Blu-ray box set!\\nHonnouji Academy, a school ruled by students clad in special outfits called Goku Uniforms. Deriding the student body as \"pigs in human clothing,\" Student Council President Satsuki Kiryuin, along with her loyal lieutenants, the Elite Four, takes absolute control of the entire campus. One day, a vagrant schoolgirl named Ryuko Matoi appears and tries to get Satsuki, who recognizes her Scissor Blade, to talk. Was their encounter mere coincidence, or was it fate? The clash between the two will soon consume the whole academy!',
       19998,
       1,
+      categories[4],
       series[3],
-      [categories[4]],
     ),
     itemCreate(
       5,
@@ -197,8 +196,8 @@ async function createItems() {
       'Unleash your inner Thorn Princess with this stylish Yor Forger tee! It\’s the perfect shirt for those leading a double life — especially if you happen to be a mild-mannered office worker and also a lethal assassin with blades sharper than your cooking skills.',
       2995,
       10,
+      categories[0],
       series[4],
-      [categories[0]],
     ),
     itemCreate(
       6,
@@ -206,8 +205,8 @@ async function createItems() {
       'From \"That Time I Got Reincarnated as a Slime\" comes a POP UP PARADE figure of Shion! Be sure to display Shion together with other POP UP PARADE figures from \"That Time I Got Reincarnated as a Slime\"!',
       4399,
       0,
+      categories[1],
       series[2],
-      [categories[1]],
     ),
     itemCreate(
       7,
@@ -215,8 +214,8 @@ async function createItems() {
       '\"Soup-style pasta on Mt. Takabotchi... delicious.\" From the anime series \"Laid-Back Camp\" comes a DX edition figma of Rin Shima!',
       14299,
       2,
+      categories[1],
       series[0],
-      [categories[1]],
     ),
     itemCreate(
       8,
@@ -224,8 +223,8 @@ async function createItems() {
       'It is a acrylic keychain using the logo of Special Live Event.',
       799,
       0,
+      categories[3],
       series[1],
-      [categories[3]],
     ),
     itemCreate(
       9,
@@ -233,8 +232,8 @@ async function createItems() {
       'From the popular series \"That Time I Got Reincarnated as a Slime\" comes a Nendoroid Pin of Milim Nava.',
       1500,
       5,
+      categories[3],
       series[2],
-      [categories[3]],
     ),
     itemCreate(
       10,
@@ -242,8 +241,8 @@ async function createItems() {
       'Presenting POP UP PARADE figures now in a larger size!\\nPOP UP PARADE is bringing figure fans a brand new sense of excitement with the L line.',
       5799,
       8,
+      categories[1],
       series[3],
-      [categories[1]],
     ),
     itemCreate(
       11,
@@ -251,8 +250,8 @@ async function createItems() {
       'Size: approximately 2.5 inches tall',
       3000,
       3,
+      categories[3],
       series[5],
-      [categories[3]],
     ),
   ]);
 }
