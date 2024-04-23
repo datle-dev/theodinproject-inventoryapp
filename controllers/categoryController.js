@@ -1,8 +1,15 @@
-const Series = require('../models/series');
+const Category = require('../models/category');
 const asyncHandler = require('express-async-handler');
 
 exports.category_list = asyncHandler(async (req, res, next) => {
-    res.send('not implemented: category list');
+  const categories = await Category.find({})
+  .sort({ name: 1 })
+  .exec();
+
+  res.render('pages/categoryList', {
+    title: 'Category List',
+    category_list: categories,
+  });
 });
 
 exports.category_detail = asyncHandler(async (req, res, next) => {

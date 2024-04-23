@@ -2,7 +2,14 @@ const Series = require('../models/series');
 const asyncHandler = require('express-async-handler');
 
 exports.series_list = asyncHandler(async (req, res, next) => {
-    res.send('not implemented: series list');
+  const series = await Series.find({})
+    .sort({ name: 1 })
+    .exec();
+
+  res.render('pages/seriesList', {
+    title: 'Series List',
+    series_list: series,
+  });
 });
 
 exports.series_detail = asyncHandler(async (req, res, next) => {
