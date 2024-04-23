@@ -248,7 +248,7 @@ async function createItems() {
     itemCreate(
       11,
       'Haikyu!! - Figural Bag Clip Set',
-      '',
+      'Size: approximately 2.5 inches tall',
       3000,
       3,
       series[5],
