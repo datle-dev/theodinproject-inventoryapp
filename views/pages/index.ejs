@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <%- include('../partials/headContent') %>
+  <title><%= title %></title>
 </head>
 <body>
-  
+  <%- include('../partials/header') %>
+  <main>
+    <h1><%= title %></h1>
+    <p>Items: <%= item_count %></p>
+    <p>Categories: <%= category_count %></p>
+    <p>Series: <%= series_count %></p>
+  </main>
+  <%- include('../partials/footer') %>
 </body>
 </html>
