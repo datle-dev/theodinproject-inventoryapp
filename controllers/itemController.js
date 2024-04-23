@@ -1,8 +1,21 @@
 const Item = require('../models/item');
+const Category = require('../models/category');
+const Series = require('../models/series');
 const asyncHandler = require('express-async-handler');
 
 exports.index = asyncHandler(async (req, res, next) => {
-    res.send('not implemented: site home page');
+    const [numItems, numCategories, numSeries] = await Promise.all([
+        Item.countDocuments({}).exec(),
+        Category.countDocuments({}).exec(),
+        Series.countDocuments({}).exec(),
+    ]);
+
+    res.render('pages/index', {
+        title: 'Inventory Home',
+        item_count: numItems,
+        category_count: numCategories,
+        series_count: numSeries,
+    });
 });
 
 exports.item_list = asyncHandler(async (req, res, next) => {
