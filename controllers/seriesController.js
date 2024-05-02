@@ -13,7 +13,12 @@ exports.series_list = asyncHandler(async (req, res, next) => {
 });
 
 exports.series_detail = asyncHandler(async (req, res, next) => {
-    res.send(`not implemented: series detail: ${req.params.id}`);
+    const series = await Series.findById(req.params.id).exec();
+
+    res.render('pages/seriesDetail', {
+      title: 'Series Detail',
+      series: series,
+    });
 });
 
 exports.series_create_get = asyncHandler(async (req, res, next) => {
