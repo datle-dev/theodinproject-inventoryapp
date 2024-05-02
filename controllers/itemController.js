@@ -2,6 +2,7 @@ const Item = require('../models/item');
 const Category = require('../models/category');
 const Series = require('../models/series');
 const asyncHandler = require('express-async-handler');
+const { body, validationResult } = require('express-validator');
 
 exports.index = asyncHandler(async (req, res, next) => {
   const [numItems, numCategories, numSeries] = await Promise.all([
@@ -44,7 +45,16 @@ exports.item_detail = asyncHandler(async (req, res, next) => {
 });
 
 exports.item_create_get = asyncHandler(async (req, res, next) => {
-  res.send('not implemented: item create get');
+  const [allCategories, allSeries] = await Promise.all([
+    Category.find().sort({ name: 1 }).exec(),
+    Series.find().sort({ name: 1 }).exec(),
+  ]);
+
+  res.render('pages/itemForm', {
+    title: 'Create Item',
+    categories: allCategories,
+    series: allSeries,
+  });
 });
 
 exports.item_create_post = asyncHandler(async (req, res, next) => {
