@@ -1,3 +1,4 @@
+const Item = require('../models/item');
 const Series = require('../models/series');
 const asyncHandler = require('express-async-handler');
 
@@ -13,11 +14,16 @@ exports.series_list = asyncHandler(async (req, res, next) => {
 });
 
 exports.series_detail = asyncHandler(async (req, res, next) => {
-    const series = await Series.findById(req.params.id).exec();
+    const [series, itemsInSeries]  = await Promise.all([
+      Series.findById(req.params.id).exec(),
+      Item.find({ series: req.params.id }, "name price quantity url")
+        .exec(),
+    ]);
 
     res.render('pages/seriesDetail', {
       title: 'Series Detail',
       series: series,
+      items: itemsInSeries,
     });
 });
 

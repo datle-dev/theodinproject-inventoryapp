@@ -10,6 +10,12 @@
     <h1><%= title %></h1>
     <h2><%= series.name %></h2>
     <p><%= series.description %></p>
+    <h2><%= series.name %> Items</h2>
+    <% for (let item of items) { %>
+      <p><a href=<%= item.url %>><%= item.name %></a></p>
+      <p>$<%= item.price / 100 %></p>
+      <p><%= item.quantity %> in stock</p>
+    <% } %>
   </main>
   <%- include('../partials/footer') %>
 </body>
